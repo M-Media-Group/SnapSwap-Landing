@@ -1,0 +1,68 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+import HeroText from '~/components/widgets/HeroText.astro';
+import ContactUs from '~/components/widgets/Contact.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+
+const metadata = {
+  title: 'Offer a deal',
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- HeroText Widget ******************* -->
+
+  <HeroText tagline="Get started" title="Find skilled creators!" />
+
+  <ContactUs
+    title="Offer your first deal!"
+    subtitle="For quicker answers, explore our FAQs section. You may find the solution you're looking  for right there! If not, our support team is delighted to help you."
+    inputs={[
+      {
+        type: 'text',
+        name: 'name',
+        label: 'Deal Title',
+      },
+      {
+        type: 'number',
+        name: 'deal-value',
+        label: 'Deal value in USD',
+      },
+      {
+        type: 'email',
+        name: 'email',
+        label: 'Your Email',
+      },
+      {
+        type: 'text',
+        name: 'address',
+        label: 'Your Business Location (address)',
+      },
+    ]}
+    textarea={{
+      label: 'Content Requirements',
+    }}
+    radio={{
+      label: 'Select your plan',
+      options: [
+        {
+          label: 'Basic',
+          value: 'basic',
+        },
+        {
+          label: 'Standard',
+          value: 'standard',
+        },
+        {
+          label: 'Premium',
+          value: 'premium',
+        },
+      ],
+    }}
+    disclaimer={{
+      label:
+        'By submitting this contact form, you acknowledge and agree to the collection of your personal information.',
+    }}
+    description="Our support team typically responds within 24 business hours."
+  />
+</Layout>

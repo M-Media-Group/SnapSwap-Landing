@@ -1,0 +1,478 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Features2 from '~/components/widgets/Features2.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import BlogLatestPosts from '~/components/widgets/BlogLatestPosts.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import Stats from '~/components/widgets/Stats.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+import Prices from '~/components/widgets/Pricing.astro';
+
+const metadata = {
+  title: 'SnapSwap — Free template for creating websites with Astro + Tailwind CSS',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Offer a deal',
+        href: '/offer-a-deal',
+        icon: 'tabler:user',
+      },
+      { text: 'Contact sales', href: '/contact', variant: 'secondary' },
+    ]}
+    image={{ src: '~/assets/images/hero-image-3.svg', alt: 'SnapSwap Hero' }}
+  >
+    <Fragment slot="title">
+      High quality content <span class="hidden sm:inline">for your business</span> at
+      <span class="text-accent dark:text-white highlight"> a fraction of the cost</span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      <span class="hidden sm:inline">
+        <span class="font-semibold">SnapSwap</span> connects you with highly-skilled travelling content creators.</span
+      >
+      <span class="block mb-1 sm:hidden font-bold text-blue-600">SnapSwap: Offer deals for content.</span>
+      Leverage passionate creators to create high-quality content for you.
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="About us"
+    subtitle="SnapSwap provides you a platform to offer deals in exchange for high-quality content. We connect you with talented content creators who are passionate about travelling photography and want food, fun, and services in exchange for their work."
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    tagline="Features"
+    title="What you get with SnapSwap"
+    subtitle="SnapSwap provides you with a range of features to ensure you get the most out of your deals and the content you receive."
+    items={[
+      {
+        title: 'Copyright released fresh content',
+        description:
+          'Submissions you accept are yours to use however you want. No need to worry about copyright issues.',
+        icon: 'tabler:brand-tailwind',
+      },
+      {
+        title: 'AI submission quality control',
+        description:
+          'Automated submission quality control ensures the content meets industry standards and is likely to be highly engaging.',
+        icon: 'tabler:components',
+      },
+      {
+        title: 'Custom deal redemption rules',
+        description:
+          'Set custom rules for deal redemption based on location, time of day, and even objects in the image, ensuring the content meets your requirements.',
+        icon: 'tabler:list-check',
+      },
+      {
+        title: 'Advanced analytics and insights',
+        description:
+          'Gain insights into the performance of your deals and the effectiveness of your marketing, ensuring you can make data-driven decisions.',
+        icon: 'tabler:rocket',
+      },
+      {
+        title: 'Retargeting and lookalike audiences',
+        description:
+          'Access a new customer base and engage with previous visitors, increasing the likelihood of conversion and retention.',
+        icon: 'tabler:users',
+      },
+      {
+        title: 'Marketing tips and tricks',
+        description:
+          'Unlock marketing tips and tricks to help you create effective posts with your new content and promote your deals to get a maximum return.',
+        icon: 'tabler:bulb',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    tagline="Content creators, NOT infuencers"
+    title="SnapSwap: Skills meet needs!"
+    items={[
+      {
+        title: 'Quality images and videos',
+        description:
+          'These are not influecer selfies. SnapSwap content creators are skilled photographers and videographers.',
+      },
+      {
+        title: 'Rights released content',
+        description: 'You can use the content in any way you want. No need to worry about copyright issues.',
+      },
+      {
+        title: 'Automatic submission quality control',
+        description:
+          'Unlike your typical "just DM me" campaigns, SnapSwap uses AI to ensure the content meets high quality standards, saving you time and ensuring maximum flexibility.',
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'https://unsplash.com/photos/dish-on-white-ceramic-plate-N_Y88TWmGwA',
+      caption: 'Offer dinner in exchange for content. Photo by Jay Wennington',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">Highlighting talent</h3>
+      We provide talented content creators with the opportunity to pursue more of their passion by saving them money on their
+      travels.
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: 'High level of customization',
+        description: `Tailor the deals effortlessly to match your brand's needs.`,
+      },
+      {
+        title: 'Multiple content-requirement possibilities',
+        description: 'Set custom rules based on what your brand is looking for.',
+      },
+      {
+        title: 'Pay only for content you accept',
+        description:
+          "Comission is charged only if you accept the content. If you don't like a piece of content, you can easily deny the submission.",
+      },
+      {
+        title: 'Marketing tips and tricks',
+        description:
+          "We'll show you not only how to create effective posts with your new content, but also how to promote your deals to get a maximum return.",
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1517958911667-09c05f6cd698?q=80&w=2788&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Blueprint Image',
+      caption: 'Offer coffee + bagel in exchange for content. Photo by Blake Wisz',
+    }}
+  >
+    <Fragment slot="content">Ensure your offers work for you.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: 'Fresh perspectives',
+        description:
+          'Gain access to a diverse range of travelling content creators, each with their unique style and perspective, ensuring your marketing remains fresh and engaging.',
+      },
+      {
+        title: 'Engaging content',
+        description:
+          'Creators continously test their own content, so they know what works. They are passionate about their work and want to create content that is engaging and effective.',
+      },
+      {
+        title: 'Time and resource efficiency',
+        description:
+          'Skip the time-consuming process of running photo-shoots and the high costs associated with them. SnapSwap provides you with high-quality content at a fraction of the cost.',
+      },
+      {
+        title: 'Community engagement',
+        description: `Engage with a community of passionate content creators, building relationships and creating a network of talented individuals.`,
+      },
+    ]}
+    image={{
+      src: 'https://images.unsplash.com/photo-1546773740-e13e5c8feb56?q=80&w=2670&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+      alt: 'Astronauts Image',
+      caption: 'Offer activites, like paragliding, in exchange for content. Photo by Berkay Akbulut',
+    }}
+  >
+    <Fragment slot="content">Content designed to cater to growth and success.</Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Pricing Widget ******************* -->
+
+  <Prices
+    title="Unbeatable savings"
+    subtitle="From $3k photo-sessions to:"
+    id="pricing"
+    prices={[
+      {
+        title: 'basic',
+        subtitle: 'Optimal choice for getting started',
+        price: 49,
+        period: 'per Month, \n + 20% of deals redeemed',
+        items: [
+          {
+            description: 'Visibility on SnapSwap',
+          },
+          {
+            description: 'Accept up to 20 content submissions per month',
+          },
+          {
+            description: 'Automated submission quality control',
+          },
+          {
+            description: 'Promotion on our social media channels',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '/offer-a-deal',
+        },
+      },
+      {
+        title: 'standard',
+        subtitle: 'Optimal choice for small teams',
+        price: 249,
+        period: 'Per Month, \n + 15% of deals redeemed',
+        items: [
+          {
+            description: 'Everything in basic',
+          },
+          {
+            description: 'Unlimited content submissions',
+          },
+          {
+            description: 'Apply submission rules based on camera type, location, and time of day',
+          },
+          {
+            description: 'Access retargeting audiences',
+          },
+          {
+            description: 'Automatically generated marketing materials',
+          },
+          {
+            description: 'Promotion suggestions and plans',
+          },
+          {
+            description: 'Offer deals to creators for existing content you like and want to use',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Get started',
+          href: '/offer-a-deal',
+        },
+        hasRibbon: true,
+        ribbonTitle: 'pay as you go',
+      },
+      {
+        title: 'premium',
+        subtitle: 'Optimal choice for companies',
+        price: 349,
+        period: 'Per Month, \n + 15% of deals redeemed',
+        items: [
+          {
+            description: 'Everything in standard',
+          },
+          {
+            description: 'Show first in search results',
+          },
+          {
+            description: 'One on one support',
+          },
+          {
+            description: 'Custom deal redemption rules',
+          },
+          {
+            description: 'Access lookalike audiences',
+          },
+          {
+            description: 'AI caption generation',
+          },
+        ],
+        callToAction: {
+          target: '_blank',
+          text: 'Contact sales',
+          href: '/offer-a-deal',
+        },
+      },
+    ]}
+  />
+
+  <!-- Stats Widget ****************** -->
+
+  <Stats
+    stats={[
+      { title: 'Deals', amount: '132K' },
+      { title: 'Destinations', amount: '24.8K' },
+      { title: 'Potential Savings', amount: '40%' },
+    ]}
+  />
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Most used redeem-modes"
+    subtitle="Make deals that work for you"
+    tagline="Deals"
+    items={[
+      {
+        title: 'Automatic redemption',
+        description:
+          "You don't have to do anything. The content creator will redeem the deal automatically if it passes our AI quality control, and any custom rules you specify.",
+        icon: 'flat-color-icons:template',
+      },
+      {
+        title: 'Quick redemption',
+        description:
+          'Quickly accept or deny content submissions. If you accept, the content creator will be notified and the deal will be redeemed.',
+        icon: 'flat-color-icons:gallery',
+      },
+      {
+        title: 'On-hold redemption',
+        description:
+          "The content creator requests to redeem the deal. If you accept the request, the content creator will have the value of the deal blocked on their card. If they don't submit the content within 5 days, you'll be paid instead.",
+        icon: 'flat-color-icons:approval',
+      },
+    ]}
+  >
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-green-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Features2>
+
+  <!-- Features2 Widget ************** -->
+
+  <Features2
+    title="Industries"
+    subtitle="Discover the wide range of industries supported."
+    columns={3}
+    items={[
+      {
+        title: 'Food and beverage',
+        description:
+          'Restaurants, cafes, and bars - offer free meals, drinks, or anything in-between in exchange for high-quality content from travelling creators.',
+        icon: 'tabler:burger',
+      },
+      {
+        title: 'Travel agency',
+        description: `Promote new destinations and travel packages by offering free stays, tours, or activities in exchange for high-quality content.`,
+        icon: 'tabler:globe',
+      },
+      {
+        title: 'Rental services',
+        description:
+          'Whether its skis or campervans, set up offers and deals in exchange for high-quality content to promote your rental services.',
+        icon: 'tabler:car-suv',
+      },
+      {
+        title: 'Hospitality',
+        description: `Hotels, hostels, and B&Bs - offer free stays, tours, or activities in exchange for high-quality content from travelling creators.`,
+        icon: 'tabler:home',
+      },
+      {
+        title: 'Fashion brands',
+        description: `Offer free clothing, accessories, or even fashion shoots in exchange for high-quality content from travelling creators.`,
+        icon: 'tabler:shirt',
+      },
+      {
+        title: 'Sports clubs',
+        description: `Offer fun activities in exchange for high-quality content from creators seeking adventure.`,
+        icon: 'tabler:bike',
+      },
+    ]}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="Frequently Asked Questions"
+    subtitle="Dive into the following questions to gain insights into the powerful features that SnapSwap offers and how it can elevate your web development journey."
+    tagline="FAQs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: 'Why SnapSwap?',
+        description:
+          'Get high-quality content from passionate creators at a fraction of the cost of photo-shoots. Leverage AI to ensure the content meets industry standards and is likely to be highly engaging. Rest legally assured with rights released content.',
+      },
+      {
+        title: 'What do I need to start?',
+        description:
+          'Sign up today with your business address and start creating deals. You can start with a basic plan and upgrade as you grow.',
+      },
+      {
+        title: 'Is commission charged on every submission?',
+        description:
+          'No. We automatically reject content that does not meet quality standards or your criteria. You only pay commission if you accept the content.',
+      },
+      {
+        title: 'What can I use the content for?',
+        description:
+          "Once accepted, content is yours to use however you want. You can use it in your marketing, on your website, in your social media posts, and more. The high quality even makes it suitable for print. You don't need to worry about copyright issues.",
+      },
+      {
+        title: 'What value should I offer?',
+        description:
+          'The value of the deal is up to you. You can offer anything from a free meal to a free stay at your hotel. The more valuable the deal, the more likely you are to attract high-quality content. We suggest planning for a minimum of $14 value per content submission.',
+      },
+      {
+        title: 'Can I cancel I my subscription?',
+        description:
+          "You can cancel your subscription at any time. You'll still be able to use the service until the end of the billing period.",
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: 'Offer a deal',
+        href: '/offer-a-deal',
+        icon: 'tabler:user',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      SnapSwap<br class="block sm:hidden" /><span class="sm:whitespace-nowrap">
+        <span class="hidden sm:inline">—</span>
+        Start today
+      </span>
+    </Fragment>
+
+    <Fragment slot="subtitle">
+      Attract high-quality content creators with deals that work for you. Get started today and see the difference it
+      makes to your marketing.
+    </Fragment>
+  </CallToAction>
+</Layout>

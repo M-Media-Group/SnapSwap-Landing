@@ -19,12 +19,13 @@ export const headerData = {
     //   href: getPermalink('/for-content-creators'),
     // },
     {
-      text: 'Contact sales',
-      href: getPermalink('/contact'),
+      text: 'FAQ',
+      href: getPermalink('/#faq'),
     },
+
   ],
   actions: [
-
+    { text: 'Contact sales', href: getPermalink('/offer-a-deal'), variant: 'tertiary' },
     { text: 'Offer a deal', href: getPermalink('/offer-a-deal') }]
 };
 
